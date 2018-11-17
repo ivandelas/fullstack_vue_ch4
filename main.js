@@ -70,6 +70,14 @@ const noteCountComponent = {
 new Vue({
   el: '#app',
   store,
+  computed: {
+    notes() {
+      return this.$store.getters.getNotes;
+    },
+    timestamps() {
+      return this.$store.getters.getTimestamps;
+    }
+  },
   components: {
     'input-component': inputComponent,
     'note-count-component': noteCountComponent
